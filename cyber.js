@@ -86,3 +86,7 @@ modal.on("hidden.bs.modal", function() {
   }
   timeouts = [];
 });
+
+$(".booking").click(function() {
+  $("#overload").modal();
+});
