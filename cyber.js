@@ -1,3 +1,4 @@
+var body = $("body");
 var form = $("#cyberform");
 var url = $("#cyberurl");
 var modal = $("#cybermodal");
@@ -41,33 +42,43 @@ modal.on("show.bs.modal", function() {
   var devices = getDevices();
   bar.css("width", "0%");
   text.text("Initialisiere IoT-Botnetz...");
-  iframe.attr("src", url.val());
+  //iframe.attr("src", url.val());
+  iframe.attr("src", "about:blank");
+  body.css("cursor", "wait");
   timeouts.push(setTimeout(function() {
-    bar.css("width", "20%");
+    bar.css("width", "14%");
     text.text(rand() + " " + devices[0] + "...");
   }, 2000));
   timeouts.push(setTimeout(function() {
-    bar.css("width", "40%");
+    bar.css("width", "29%");
     text.text(rand() + " " + devices[1] + "...");
   }, 4000));
   timeouts.push(setTimeout(function() {
-    bar.css("width", "60%");
+    bar.css("width", "43%");
     text.text(rand() + " " + devices[2] + "...");
   }, 6000));
   timeouts.push(setTimeout(function() {
-    bar.css("width", "80%");
+    bar.css("width", "57%");
     text.text(rand() + " " + devices[3] + "...");
   }, 8000));
   timeouts.push(setTimeout(function() {
-    bar.css("width", "100%");
-    text.text("DDoS abgeschlossen!");
+    bar.css("width", "71%");
+    text.text(rand() + " " + devices[4] + "...");
   }, 10000));
   timeouts.push(setTimeout(function() {
+    bar.css("width", "86%");
+    text.text("DDoS abgeschlossen, versuche Zielseite zu laden...");
+  }, 12000));
+  timeouts.push(setTimeout(function() {
+    bar.css("width", "100%");
+    text.text("Zielseite geladen!");
     iframe.attr("src", getErrorPage());
-  }, 11000));
+    body.css("cursor", "initial");
+  }, 14000));
 });
 
 modal.on("hidden.bs.modal", function() {
+  body.css("cursor", "initial");
   iframe.attr("src", "about:blank");
   for (var t in timeouts) {
     clearTimeout(timeouts[t]);
