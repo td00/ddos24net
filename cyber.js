@@ -34,8 +34,9 @@ function getDevices() {
   return devices;
 }
 
-form.submit(function() {
+form.submit(function(e) {
   modal.modal();
+  e.preventDefault();
 });
 
 modal.on("show.bs.modal", function() {
