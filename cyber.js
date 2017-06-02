@@ -19,7 +19,7 @@ function rand(max, min) {
 }
 
 function getErrorPage() {
-  var pages = [ "500-apache.html" ];
+  var pages = ["500-apache.html", "500-iis.html"];
   return pages[rand(pages.length, 0)];
 }
 
