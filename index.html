@@ -120,7 +120,6 @@
   .navbar {
       margin-bottom: 0;
       background-color: #000000;
-      z-index: 9999;
       border: 0;
       font-size: 12px !important;
       line-height: 1.42857143 !important;
@@ -216,11 +215,11 @@
 <div class="jumbotron text-center">
   <h1>ddos24.net - Borowsky & Sohn GmbH und Co KG aA</h1> 
   <p>Kommunikationsdrosselung aus Familienhand</p> 
-  <form>
+  <form id="cyberform">
     <div class="input-group">
-      <input type="url" class="form-control" size="50" placeholder="Gib eine URL an" required>
+      <input type="url" id="cyberurl" class="form-control" size="50" placeholder="Gib eine URL an" required>
       <div class="input-group-btn">
-        <a href="http://cir.bundeswehr.de/contentDownload/download/14918239456344IWhH3LWrSjToSO7CysbjIWtpMEJsb8HfC0pI4YIlFvhS9J1kgC/Cyber%20Marsch_Arbeitsaufnahme_MusKorpsBw_17%2003%2020.mp3" class="btn btn-danger">Cyber frei!</a>
+        <button class="btn btn-danger">Cyber frei!</button>
       </div>
     </div>
   </form>
@@ -486,6 +485,26 @@ marker.setMap(map);
   <a href="https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-22350-0001,_Berlin,_Postamt_O_17,_Päckchenverteilung.jpg" target="_blank">Post</a></p>
 </footer>
 
+<div id="cybermodal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">IoT Cloud DDoS as a Service</h4>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <span id="progresstext"></span>
+        </div>
+        <div class="progress">
+            <div id="progressbar" class="progress-bar progress-bar-striped active" style="width: 0%"></div>
+	      </div>
+        <iframe id="iframe" sandbox style="width: 100%; height: 400px;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 $(document).ready(function(){
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -512,6 +531,6 @@ $(document).ready(function(){
   });
 })
 </script>
-
+<script src="cyber.js"></script>
 </body>
 </html>
