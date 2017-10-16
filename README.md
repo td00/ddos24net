@@ -1,5 +1,5 @@
 # ddos24net
-a fictional ddos provider
+a fictional ddos provider and proud supporter and sponsor from the https://cybermorning.show/
 
 feel free to do whatever
 
